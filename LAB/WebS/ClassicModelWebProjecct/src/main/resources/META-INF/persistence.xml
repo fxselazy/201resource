@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="sit.int202_ClassicModelWebProjecct_war_1.0-SNAPSHOTPU" transaction-type="JTA">
+    <jta-data-source>jdbc/classicmodels</jta-data-source>
+    <class>sit.int202.classicmodel.entity.Orders</class>
+    <class>sit.int202.classicmodel.entity.Customers</class>
+    <class>sit.int202.classicmodel.entity.Productlines</class>
+    <class>sit.int202.classicmodel.entity.Products</class>
+    <class>sit.int202.classicmodel.entity.Employees</class>
+    <class>sit.int202.classicmodel.entity.Orderdetails</class>
+    <class>sit.int202.classicmodel.entity.Offices</class>
+    <class>sit.int202.classicmodel.entity.Payments</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+  </persistence-unit>
+</persistence>

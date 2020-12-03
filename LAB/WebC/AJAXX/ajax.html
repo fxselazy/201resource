@@ -1,0 +1,48 @@
+<html>
+  <body>
+    <h1>Ajax Example: XML</h1>
+    <button type="button" onclick="loadText()">AJAX Text</button>
+    <button type="button" onclick="loadXML()">AJAX XML</button>
+    <button type="button" onclick="loadJSON()">AJAX JSON</button>
+    <div id="here"/>
+    <script>
+      function textToHtml(text) { return "text"; } 
+      function xmlToHtml(xml) { return "xml"; }
+      function jsonToHtml(json) { return "json"; }
+      function loadText() {
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = 
+          function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("here").innerHTML = textToHtml(this.responseText);
+            }
+          };
+        ajax.open("GET", "textFile.txt", true);
+        ajax.send();
+      }
+      function loadXML() {
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = 
+          function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("here").innerHTML = xmlToHtml(this.responseXML);
+            }
+          };
+        ajax.open("GET", "dataFile.xml", true);
+        ajax.send();
+      }
+            function loadJSON() {
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = 
+          function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var json = JSON.parse(this.responseText);
+              document.getElementById("here").innerHTML = jsonToHtml(json);
+            }
+          };
+        ajax.open("GET", "jsonFile.json", true);
+        ajax.send();
+      }
+    </script>
+  </body>
+</html>
