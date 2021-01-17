@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>listener.NewServletListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Chapter1Servlet</servlet-name>
+        <servlet-class>Chapter1Servlet</servlet-class>
+        <init-param>
+            <param-name>greeting</param-name>
+            <param-value>Hello</param-value>
+        </init-param>
+        <init-param>
+            <param-name>leaving</param-name>
+            <param-value>Good bye</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Chapter2Servlet</servlet-name>
+        <servlet-class>Chapter2Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Chapter3Servlet</servlet-name>
+        <servlet-class>Chapter3Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Chapter4Servlet</servlet-name>
+        <servlet-class>Chapter4Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Chapter1Servlet</servlet-name>
+        <url-pattern>/Chapter1/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Chapter2Servlet</servlet-name>
+        <url-pattern>/Chapter2/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Chapter3Servlet</servlet-name>
+        <url-pattern>/Chapter3/*</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.html</location>
+    </error-page>
+    <servlet-mapping>
+        <servlet-name>Chapter4Servlet</servlet-name>
+        <url-pattern>/Chapter4</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>contextParamName</param-name>
+        <param-value>context parameter value</param-value>
+    </context-param>
+    <!--    <listener>
+        <listener-class>package.ContextLisener</listener-class>
+    </listener>-->
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

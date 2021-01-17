@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <!--Servlet-->
+    <servlet>
+        <servlet-name>Chapter1Servlet</servlet-name>
+        <servlet-class>sit.int202.chapters.Chapter1Servlet</servlet-class>
+        <init-param>
+            <param-name>meeting</param-name>
+            <param-value>hello</param-value>
+        </init-param>
+        <init-param>
+            <param-name>leaving</param-name>
+            <param-value>goodbye</param-value>
+        </init-param>
+    </servlet>
+    <!--Chapter1V2-->
+    <servlet>
+        <servlet-name>Chapter1V2</servlet-name>
+        <servlet-class>sit.int202.chapters.Chapter1Servlet</servlet-class>
+        <init-param>
+            <param-name>meeting</param-name>
+            <param-value>hi</param-value>
+        </init-param>
+        <init-param>
+            <param-name>departing</param-name>
+            <param-value>see you</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Chapter2Servlet</servlet-name>
+        <servlet-class>sit.int202.chapters.Chapter2Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Chapter3Servlet</servlet-name>
+        <servlet-class>sit.int202.chapters.Chapter3Servlet</servlet-class>
+    </servlet>
+    <!--Servlet Mapping-->
+    <servlet>
+        <servlet-name>Chapter4Servlet</servlet-name>
+        <servlet-class>sit.int202.chapters.Chapter4Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Chapter1Servlet</servlet-name>
+        <url-pattern>/Chapter1/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Chapter2Servlet</servlet-name>
+        <url-pattern>/Chapter2/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Chapter3Servlet</servlet-name>
+        <url-pattern>/Chapter3/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Chapter1V2</servlet-name>
+        <url-pattern>/Chapter1/test/*</url-pattern>
+        <url-pattern>/Chapter1/another</url-pattern>
+    </servlet-mapping>
+    <!--Session Config-->
+    <servlet-mapping>
+        <servlet-name>Chapter4Servlet</servlet-name>
+        <url-pattern>/Chapter4/*</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <!--Error Page-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/Chapter2</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/Chapter1/another</location>
+    </error-page>
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/pathToServletThatHandleException</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/pathToServletThatHandleException</location>
+    </error-page>
+    <!--Display Context-->
+    <display-name>Big Chungus</display-name>
+    <context-param>
+        <param-name>Yeesuo</param-name>
+        <param-value>cancer</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Oreo</param-name>
+        <param-value>5 bahts</param-value>
+    </context-param>
+</web-app>
